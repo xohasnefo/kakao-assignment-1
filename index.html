@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo 앱</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="week-navigation">
+            <button id="prev-week-btn" class="week-nav-btn">&lt;</button>
+            <span id="month-display"></span>
+            <button id="next-week-btn" class="week-nav-btn">&gt;</button>
+        </div>
+        
+        <div id="weekly-calendar" class="weekly-calendar"></div>
+
+        <header>
+            <p class="subtitle">선택한 날짜의 할 일을 관리해보세요.</p>
+        </header>
+
+        <div class="input-container">
+            <input type="text" id="todo-input" placeholder="새로운 할 일을 입력하세요." autocomplete="off">
+            <button id="add-button">추가</button>
+        </div>
+
+        <div class="tab-container">
+            <button class="tab-btn active" data-filter="all">전체</button>
+            <button class="tab-btn" data-filter="active">진행 중</button>
+            <button class="tab-btn" data-filter="completed">완료</button>
+        </div>
+
+        <ul id="todo-list"></ul>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

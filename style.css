@@ -1,0 +1,304 @@
+/* 전역 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 60px;
+}
+
+/* 앱 컨테이너 */
+.app-container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 480px;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+/* 주차 네비게이션 상단바 */
+.week-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#month-display {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111111;
+}
+
+.week-nav-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: #888888;
+    cursor: pointer;
+    padding: 4px 12px;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.week-nav-btn:hover {
+    color: #672be0;
+    background-color: #f5f0ff;
+}
+
+/* 주간 캘린더 레이아웃 */
+.weekly-calendar {
+    display: flex;
+    justify-content: space-between;
+    gap: 4px;
+    margin-bottom: 25px;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+/* 개별 날짜 카드 */
+.day-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 4px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.day-card:hover {
+    background-color: #eef2ff;
+}
+
+.day-card .day-name {
+    font-size: 11px;
+    color: #888888;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.day-card .day-number {
+    font-size: 14px;
+    font-weight: 700;
+    color: #333333;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* 선택된 날짜 스타일 */
+.day-card.selected .day-number {
+    background-color: #e2d5ff;
+    color: #672be0;
+}
+
+/* 오늘 날짜 스타일 강조 */
+.day-card.today .day-number {
+    background-color: #672be0;
+    color: #ffffff;
+}
+
+/* Todo 개수 배지 스타일 */
+.day-card .todo-count-badge {
+    font-size: 10px;
+    font-weight: 700;
+    color: #672be0;
+    margin-top: 4px;
+    min-height: 12px;
+}
+
+/* 헤더 영역 */
+header {
+    margin-bottom: 20px;
+}
+
+header .subtitle {
+    font-size: 13px;
+    color: #888888;
+}
+
+/* 입력창 영역 */
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#todo-input {
+    flex: 1;
+    padding: 12px 16px;
+    font-size: 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#todo-input:focus {
+    border-color: #672be0;
+}
+
+#add-button {
+    background-color: #672be0;
+    color: #ffffff;
+    border: none;
+    padding: 0 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#add-button:hover {
+    background-color: #521eb8;
+}
+
+/* 필터 탭 영역 */
+.tab-container {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #888888;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.2s;
+}
+
+.tab-btn:hover {
+    color: #672be0;
+    background-color: #f5f0ff;
+}
+
+.tab-btn.active {
+    background-color: #672be0;
+    color: #ffffff;
+}
+
+/* Todo 리스트 영역 */
+#todo-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* 빈 상태(Empty State) 스타일 안내 처리 */
+.empty-message {
+    text-align: center;
+    padding: 40px 0;
+    color: #aaaaaa;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* 개별 Todo 아이템 */
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background-color: #fafdff;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.todo-item.completed {
+    background-color: #fafafa;
+    border-color: #eaeaea;
+}
+
+.todo-text {
+    font-size: 15px;
+    color: #333333;
+    flex: 1;
+    margin-right: 15px;
+    word-break: break-all;
+}
+
+.todo-item.completed .todo-text {
+    text-decoration: line-through;
+    color: #aaaaaa;
+}
+
+.edit-input {
+    flex: 1;
+    padding: 6px 10px;
+    font-size: 15px;
+    border: 1px solid #672be0;
+    border-radius: 4px;
+    outline: none;
+    margin-right: 15px;
+}
+
+/* 버튼 그룹 */
+.button-group {
+    display: flex;
+    gap: 6px;
+}
+
+.action-btn {
+    border: none;
+    background: none;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.complete-btn {
+    background-color: #eef2ff;
+    color: #672be0;
+}
+
+.complete-btn:hover {
+    background-color: #e0e7ff;
+}
+
+.edit-btn {
+    background-color: #f1f3f5;
+    color: #495057;
+}
+
+.edit-btn:hover {
+    background-color: #e9ecef;
+}
+
+.delete-btn {
+    background-color: #fff0f0;
+    color: #e03131;
+}
+
+.delete-btn:hover {
+    background-color: #ffe3e3;
+}
